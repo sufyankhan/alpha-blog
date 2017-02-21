@@ -1,13 +1,25 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.nav {
-    background-color: #dedede;
-}
+.row.content {height: 1500px;}
+
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
 
 .center {
     text-align: center;
 }
+
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
 
 footer {
     margin-top: 45px;
@@ -32,8 +44,4 @@ footer ul {
 footer ul li {
     float: left;
     margin-left: 15px;
-}
-
-h1 {
-    font-size: 3.7em;
 }
