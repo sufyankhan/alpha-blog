@@ -15,7 +15,6 @@ def edit
 end
 
 def create
-    debugger
     @article = Article.new(article_params)
    @article.user = User.first
    if @article.save
@@ -28,6 +27,7 @@ end
 
 def update
  if @article.update(article_params)
+     @article.user = User.first
      flash[:success] = "Article was successfully updated"
      redirect_to article_path(@article)
  else
