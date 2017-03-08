@@ -1,17 +1,13 @@
 <div class="col-sm-8">
-<br><br><br><br>
-<h2 align="center"> Title: <%= @article.title %></h2>
-<div class="well col-sm-8 col-sm-offset-2">
+<div class="well" style="margin-top:10px;">
+    <h2> Title: <%= @article.title %></h2>
     <% if @article.user %>
     <ul class="listing">
-      <div class="row center">
-              <li>Created by:</li>
-              <li><%= link_to gravatar_for(@article.user), user_path(@article.user)%></li>
-              <li class="article-title">
-                  <%= link_to @article.user.username, user_path(@article.user)%>
+      <div class="row">
+              <li>Created by:<%= link_to gravatar_for(@article.user), user_path(@article.user)%><br>
+               <span style="padding-left:80px;"><%= link_to @article.user.username, user_path(@article.user)%><br></span>
+               <span style="padding-left:80px;"><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %></span>
               </li>
-              <li><small><%= pluralize(@article.user.articles.count, "article") if @article.user.articles %>
-              </small></li>
       </div>
   </ul>
   <% end %>

@@ -2,5 +2,6 @@
         <h1>Welcome to <%= @user.username %>'s Page</h1>
         <%= gravatar_for @user, size:300 %>
 <h4><%= @user.username %>'s articles</h4>
-<%= render 'articles/article', obj: @user.articles %>
+<%= render 'articles/article', obj: @user_articles %>
+<div><%= will_paginate @user_articles %></div>
 </div>

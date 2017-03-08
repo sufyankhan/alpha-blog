@@ -1,5 +1,7 @@
 <div class="col-sm-8">
 <h1 align="center">Listing all Articles</h1>
-<%= link_to "Create new article", new_article_path, class: "btn btn-sm btn-success" %><br><br>
+<div><%= link_to "Create new article", new_article_path, class: "btn btn-sm btn-success" %></div>
+<div><%= will_paginate %></div>
 <%= render 'article', obj: @articles %>
+<%= will_paginate %>
 </div>
