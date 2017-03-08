@@ -1,5 +1,5 @@
 <div class="col-sm-8">
 <h1 align="center">Listing all Articles</h1>
-<%= link_to "Create new article", new_article_path %>
+<%= link_to "Create new article", new_article_path, class: "btn btn-sm btn-success" %><br><br>
 <%= render 'article', obj: @articles %>
 </div>
