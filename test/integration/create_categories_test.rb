@@ -5,7 +5,7 @@ class CreateCategoriesTest < ActionDispatch::IntegrationTest
     @user = User.create(username: "john", email: "john@example.com", password:"password", admin: true)
    end
     
-   test "get new category form and crate category" do
+   test "get new category form and create category" do
       sign_in_as(@user, "password")
       get new_category_path
       assert_template 'categories/new'
